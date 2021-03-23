@@ -60,3 +60,9 @@ CREATE TABLE skus (
   PRIMARY KEY (id),
   FOREIGN KEY (styleId) REFERENCES styles (id)
 );
+
+CREATE INDEX product_id_index ON product (id);
+CREATE INDEX style_product_id_index ON styles (productId);
+CREATE INDEX feature_product_id_index ON features (productId);
+CREATE INDEX photos_style_id_index ON photos (styleId);
+CREATE INDEX skus_style_id_index ON skus (styleId);
