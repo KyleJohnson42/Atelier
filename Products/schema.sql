@@ -57,11 +57,12 @@ CREATE TABLE skus (
   styleId INT NOT NULL,
   size TEXT,
   quantity INT,
-  PRIMARY KEY (id),
+  PRIMARY KEY (id),\q
   FOREIGN KEY (styleId) REFERENCES styles (id)
 );
 
 CREATE INDEX product_id_index ON product (id);
+CREATE INDEX current_product_id_index ON related (current_product_id);
 CREATE INDEX style_product_id_index ON styles (productId);
 CREATE INDEX feature_product_id_index ON features (productId);
 CREATE INDEX photos_style_id_index ON photos (styleId);
