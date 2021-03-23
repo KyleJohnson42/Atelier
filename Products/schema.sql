@@ -57,7 +57,7 @@ CREATE TABLE skus (
   styleId INT NOT NULL,
   size TEXT,
   quantity INT,
-  PRIMARY KEY (id),\q
+  PRIMARY KEY (id),
   FOREIGN KEY (styleId) REFERENCES styles (id)
 );
 
