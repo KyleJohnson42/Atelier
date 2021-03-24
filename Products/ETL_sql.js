@@ -22,7 +22,7 @@ stream.on('error', err => {
 stream.on('finish', () => {
   console.log('Finished Products');
   const stream = client.query(copyFrom(`COPY features FROM STDIN WITH CSV HEADER NULL 'null'`));
-  const readStream = fs.createReadStream('./features.csv');
+  const readStream = fs.createReadStream('../Data/features.csv');
   readStream.pipe(stream);
   readStream.on('error', err => {
     console.log(err);
@@ -35,7 +35,7 @@ stream.on('finish', () => {
   stream.on('finish', () => {
     console.log('Finished Features');
     const stream = client.query(copyFrom(`COPY related FROM STDIN WITH CSV HEADER NULL 'null'`));
-    const readStream = fs.createReadStream('./related.csv');
+    const readStream = fs.createReadStream('../Data/related.csv');
     readStream.pipe(stream);
     readStream.on('error', err => {
       console.log(err);
@@ -48,7 +48,7 @@ stream.on('finish', () => {
     stream.on('finish', () => {
       console.log('Finished Related');
       const stream = client.query(copyFrom(`COPY styles FROM STDIN WITH CSV HEADER NULL 'null'`));
-      const readStream = fs.createReadStream('./styles.csv');
+      const readStream = fs.createReadStream('../Data/styles.csv');
       readStream.pipe(stream);
       readStream.on('error', err => {
         console.log(err);
@@ -61,7 +61,7 @@ stream.on('finish', () => {
       stream.on('finish', () => {
         console.log('Finished Styles');
         const stream = client.query(copyFrom(`COPY photos FROM STDIN WITH CSV HEADER NULL 'null'`));
-        const readStream = fs.createReadStream('./photos.csv');
+        const readStream = fs.createReadStream('../Data/photos.csv');
         readStream.pipe(stream);
         readStream.on('error', err => {
           console.log(err);
@@ -74,7 +74,7 @@ stream.on('finish', () => {
         stream.on('finish', () => {
           console.log('Finished Photos');
           const stream = client.query(copyFrom(`COPY skus FROM STDIN WITH CSV HEADER NULL 'null'`));
-          const readStream = fs.createReadStream('./skus.csv');
+          const readStream = fs.createReadStream('../Data/skus.csv');
           readStream.pipe(stream);
           readStream.on('error', err => {
             console.log(err);
