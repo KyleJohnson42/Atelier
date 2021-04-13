@@ -1,2 +1,2 @@
-# SDC-Go
-Systems Design Capstone for Hack Reactor
+# Project Atelier
+API and PostgreSQL database redesign
